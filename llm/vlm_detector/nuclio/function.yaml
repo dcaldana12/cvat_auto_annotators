@@ -89,9 +89,7 @@ metadata:
         { "id": 76, "name": "scissors", "type": "rectangle" },
         { "id": 77, "name": "teddy bear", "type": "rectangle" },
         { "id": 78, "name": "hair drier", "type": "rectangle" },
-        { "id": 79, "name": "toothbrush", "type": "rectangle" },
-        { "id": 80, "name": "hand", "type": "rectangle" },
-        { "id": 81, "name": "finger", "type": "rectangle" }
+        { "id": 79, "name": "toothbrush", "type": "rectangle" }
       ]
 spec:
   description: LLM/VLM detector using an OpenAI-compatible vision API

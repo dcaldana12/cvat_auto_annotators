@@ -81,7 +81,7 @@ The VLM detector also ships a `deploy.sh` wrapper and a `config.env.example` fil
 └── docker-compose.serverless.override.yml
 ```
 
-The checked-in VLM label list contains the 80 COCO classes plus `hand` and `finger` as an example. Replace `metadata.annotations.spec` in [`llm/vlm_detector/nuclio/function.yaml`](./llm/vlm_detector/nuclio/function.yaml) with the labels for your task.
+The checked-in VLM label list contains the 80 COCO classes as an example. Replace `metadata.annotations.spec` in [`llm/vlm_detector/nuclio/function.yaml`](./llm/vlm_detector/nuclio/function.yaml) with the labels for your task.
 
 ## How it works
 
