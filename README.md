@@ -496,7 +496,7 @@ If the system becomes unresponsive:
 | `Request URL is missing an 'http://' or 'https://' protocol` | Add the scheme to `LLM_BASE_URL` (for example `http://172.18.0.1:11434/v1`) and redeploy. Bare values are normalized by the handler, but redeploy is required to pick up the new code. |
 | VLM function returns `500` with a connection error | The endpoint is unreachable from the Nuclio container. `localhost`/`127.0.0.1` points inside the container. Use a LAN address or the Docker bridge gateway; see [Local Ollama on the Docker host](#local-ollama-on-the-docker-host). |
 | Ollama is reachable on the host but not from the container | Check that Ollama listens on `0.0.0.0:11434` (`ss -ltn | grep 11434`), then test from the container with `docker exec nuclio-nuclio-vlm_detector curl -sS http://<gateway>:11434/api/tags`. |
-| VLM function times out | Increase `eventTimeout` in `llm/vlm_detector/nuclio/function.yaml` and `CVAT_NUCLIO_DEFAULT_TIMEOUT`; use a faster model or lower `LLM_IMAGE_DETAIL`. |
+| VLM function times out | Increase `eventTimeout` in `llm/vlm_detector/nuclio/function.yaml` and `CVAT_NUCLIO_DEFAULT_TIMEOUT` in `docker-compose.serverless.override.yml`; use a faster model or lower `LLM_IMAGE_DETAIL`. |
 | VLM returns no shapes | Check the labels in `function.yaml`/`LLM_LABELS`, lower the threshold, and inspect the Nuclio logs for unparsable output. |
 | `Could not parse the VLM response` in the logs | The model did not return valid JSON. Use a model with vision/JSON support or provide a stricter `LLM_PROMPT`. |
 

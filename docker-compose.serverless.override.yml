@@ -2,3 +2,7 @@ services:
   nuclio:
     ports:
       - '127.0.0.1:8070:8070'
+
+  cvat_worker_annotation:
+    environment:
+      CVAT_NUCLIO_DEFAULT_TIMEOUT: "120"
